@@ -1,0 +1,33 @@
+{
+  "name": "storeonize",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "example:simple-app": "parcel example/simple-app/index.html",
+    "size": "size-limit"
+  },
+  "author": "",
+  "license": "ISC",
+  "alias": {
+    "storeonize": "./"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "storeon": "^3.0.3"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.10.4",
+    "@size-limit/preset-small-lib": "^4.5.7",
+    "isomorphic-fetch": "^2.2.1",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.1",
+    "prop-types": "latest",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "size-limit": "^4.5.7"
+  }
+}
