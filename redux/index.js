@@ -1,36 +1,15 @@
-const { createStoreon } = require('storeon')
+import { createStoreon } from 'storeon'
 
-let __keys__ = []
-
-const setGlobalKeys = keys => (__keys__ = keys)
-
-const morphReducer = (reducerName, reducer) => {
-  return store => {
-    store.on('@init', s => {
-      const newState = reducer(undefined, {})
-
-      return {
-        store: {
-          ...s.store,
-          [reducerName]: newState,
-        },
-      }
-    })
-
-    // store.on('@changed', (s, event) => {
-    //   console.log(s, event)
-    // })
-  }
-}
+import { morphReducer } from '../core'
 
 const combineReducers = reducersMap => {
   const reducersKeys = Object.keys(reducersMap)
 
-  setGlobalKeys(reducersKeys)
+  return reducersKeys.map(reducerName => {
+    const [reducer, actions] = reducersMap[reducerName]
 
-  return reducersKeys.map(reducerName =>
-    morphReducer(reducerName, reducersMap[reducerName])
-  )
+    return morphReducer(reducerName, reducer, actions)
+  })
 }
 
 const createStore = (reducer, preloadedState = {}, middleware = []) => {
@@ -54,10 +33,4 @@ const applyMiddleware = (...args) => {
   return args
 }
 
-module.exports = {
-  combineReducers,
-  createStore,
-  applyMiddleware,
-  morphReducer,
-  __keys__,
-}
+export { combineReducers, createStore, applyMiddleware }

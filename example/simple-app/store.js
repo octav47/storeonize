@@ -1,7 +1,7 @@
-import { createStore, applyMiddleware } from 'storeonize/redux'
-import thunkMiddleware from 'storeonize/redux-thunk'
-import { createLogger } from 'storeonize/redux-logger'
-import { composeWithDevTools } from 'storeonize/redux-devtools-extension'
+import { createStore, applyMiddleware } from '../../redux'
+import thunkMiddleware from '../../redux-thunk'
+import { createLogger } from '../../redux-logger'
+import { composeWithDevTools } from '../../redux-devtools-extension'
 import rootReducer from './reducers'
 
 const loggerMiddleware = createLogger()

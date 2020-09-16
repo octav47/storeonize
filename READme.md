@@ -31,6 +31,21 @@ import { createStore, applyMiddleware } from 'storeonize/redux'
 
 * react-redux
   * [x] Provider
-  * [ ] connect
+  * [x] connect
 
-reducers still have to be rewritten unfortunately :(
+## alert!
+
+`combineReducers` is not the same as redux's
+
+the only arguments is a map:
+
+```
+combineReducers({
+  someReducerName: [reducerFunction, [array of connected actions]
+})
+```
+
+## todo
+
+* [ ] typings
+* [ ] other redux-stuff

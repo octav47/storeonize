@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'storeonize/react-redux'
+import { connect } from '../../../react-redux'
 import {
   selectSubreddit,
   fetchPostsIfNeeded,
@@ -20,7 +20,7 @@ class AsyncApp extends Component {
     if (this.props.selectedSubreddit !== prevProps.selectedSubreddit) {
       const { selectedSubreddit, fetchPostsIfNeeded } = this.props
 
-      // fetchPostsIfNeeded(selectedSubreddit)
+      fetchPostsIfNeeded(selectedSubreddit)
     }
   }
 
@@ -31,8 +31,8 @@ class AsyncApp extends Component {
       selectSubreddit,
     } = this.props
 
-    // selectSubreddit(nextSubreddit)
-    // fetchPostsIfNeeded(selectedSubreddit)
+    selectSubreddit(nextSubreddit)
+    fetchPostsIfNeeded(selectedSubreddit)
   }
 
   handleRefreshClick = e => {
@@ -44,8 +44,8 @@ class AsyncApp extends Component {
       invalidateSubreddit,
     } = this.props
 
-    // invalidateSubreddit(selectedSubreddit)
-    // fetchPostsIfNeeded(selectedSubreddit)
+    invalidateSubreddit(selectedSubreddit)
+    fetchPostsIfNeeded(selectedSubreddit)
   }
 
   render() {

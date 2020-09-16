@@ -1,4 +1,4 @@
-const { storeonDevtools } = require('storeon/devtools')
+import { storeonDevtools } from 'storeon/devtools'
 
 const composeWithDevTools = applyMiddlewareResult => {
   return [
@@ -7,4 +7,4 @@ const composeWithDevTools = applyMiddlewareResult => {
   ]
 }
 
-module.exports = { composeWithDevTools }
+export { composeWithDevTools }

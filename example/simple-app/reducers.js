@@ -1,4 +1,4 @@
-import { combineReducers } from 'storeonize/redux'
+import { combineReducers } from '../../redux'
 import {
   SELECT_SUBREDDIT,
   INVALIDATE_SUBREDDIT,
@@ -72,8 +72,11 @@ function postsBySubreddit(state = {}, action) {
 }
 
 const rootReducer = combineReducers({
-  postsBySubreddit,
-  selectedSubreddit,
+  postsBySubreddit: [
+    postsBySubreddit,
+    [INVALIDATE_SUBREDDIT, RECEIVE_POSTS, REQUEST_POSTS],
+  ],
+  selectedSubreddit: [selectedSubreddit, [SELECT_SUBREDDIT]],
 })
 
 export default rootReducer

@@ -1,5 +1,5 @@
-const thunkMiddleware = (...args) => {
-  console.log(args)
+const thunkMiddleware = () => {
+  // ignore this, because customDispatcher from core can handle thunk-like actions
 }
 
-module.exports = thunkMiddleware
+export default thunkMiddleware

@@ -1,5 +1,5 @@
-const { storeonLogger } = require('storeon/devtools')
+import { storeonLogger } from 'storeon/devtools'
 
 const createLogger = () => storeonLogger
 
-module.exports = { createLogger }
+export { createLogger }
