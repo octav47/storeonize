@@ -9,6 +9,7 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": "octav47/storeonize",
   "alias": {
     "~": "./"
   },
