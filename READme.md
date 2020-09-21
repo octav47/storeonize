@@ -1,6 +1,6 @@
 # storeonize
 
-easy way to migrate to storeon
+easy way to migrate from Redux to [Storeon](https://github.com/storeon/storeon)
 
 ## how to
 
