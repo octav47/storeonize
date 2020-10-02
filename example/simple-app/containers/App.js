@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from '../../../react-redux'
+import { connect } from 'storeonize/react-redux'
 import {
   selectSubreddit,
   fetchPostsIfNeeded,
@@ -63,9 +63,6 @@ class AsyncApp extends Component {
             <span>
               Last updated at {new Date(lastUpdated).toLocaleTimeString()}.{' '}
             </span>
-          )}
-          {!isFetching && (
-            <button onClick={this.handleRefreshClick}>Refresh</button>
           )}
         </p>
         {isFetching && posts.length === 0 && <h2>Loading...</h2>}

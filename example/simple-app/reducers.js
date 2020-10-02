@@ -1,4 +1,4 @@
-import { combineReducers } from '../../redux'
+import { combineReducers } from 'storeonize/redux'
 import {
   SELECT_SUBREDDIT,
   INVALIDATE_SUBREDDIT,

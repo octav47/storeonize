@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { createElement as h } from 'react'
 import { StoreContext, useStoreon } from 'storeon/react'
 import { customDispatcher } from '../core'
 
-const Provider = ({ store, children }) => (
-  <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
-)
+const Provider = ({ store, children }) =>
+  h(StoreContext.Provider, { value: store }, children)
 
 const connect = (mapStateToProps, mapDispatchToProps, mergeProps) => Target => {
   return props => {

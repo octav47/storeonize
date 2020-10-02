@@ -45,6 +45,14 @@ combineReducers({
 })
 ```
 
+## faq
+
+##### Storeonize just swaps Redux with Storeon. How can I start coding in Storeon style?
+
+First of all, you can use your own modules passing them to `applyMiddlware`.
+I suggest you to start rewriting code in this way: reducers, then middlewares. 
+
+
 ## todo
 
 * [ ] typings

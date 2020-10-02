@@ -29,8 +29,6 @@ const createStore = (reducer, preloadedState = {}, middleware = []) => {
   return createStoreon([preloadedStateModule, ...reducer, ...middleware])
 }
 
-const applyMiddleware = (...args) => {
-  return args
-}
+const applyMiddleware = (...args) => args
 
 export { combineReducers, createStore, applyMiddleware }
